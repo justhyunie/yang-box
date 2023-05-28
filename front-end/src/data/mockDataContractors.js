@@ -1,0 +1,47 @@
+import { tokens } from "../theme";
+
+export const mockDataContractors = [
+  {
+    id: 1,
+    firstname: "Emiliano",
+    lastname: "Flowerman",
+    email: "contractor@gmail.com",
+    age: 35,
+    phone: "(555)555-5555",
+    address: "0912 Won Street, Alabama, SY 10001",
+    city: "New York",
+    zipCode: "10001",
+    airlines: ["American Airlines", "Delta"],
+    airport: ["LGA", "JFK"],
+    code: "10001",
+  },
+  {
+    id: 1,
+    firstname: "Emiliano",
+    lastname: "Flowerman",
+    email: "contractor@gmail.com",
+    age: 35,
+    phone: "(555)555-5555",
+    address: "0912 Won Street, Alabama, SY 10001",
+    city: "New York",
+    zipCode: "10001",
+    airlines: ["American Airlines", "Delta"],
+    airport: ["LGA", "JFK"],
+    code: "10001",
+  },
+  {
+    id: 1,
+    firstname: "Emiliano",
+    lastname: "Flowerman",
+    email: "contractor@gmail.com",
+    age: 35,
+    phone: "(555)555-5555",
+    address: "0912 Won Street, Alabama, SY 10001",
+    city: "New York",
+    zipCode: "10001",
+    airlines: ["American Airlines", "Delta"],
+    airport: ["LGA", "JFK"],
+    code: "10001",
+  },
+];
+
