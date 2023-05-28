@@ -8,7 +8,7 @@ import { useTheme } from "@mui/material";
 const Contractors = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const apiRef = useGridApiRef();
+ 
 
   const columns = [
     { field: "id", headerName: "ID", flex: 0.5 },
@@ -79,10 +79,10 @@ const Contractors = () => {
         }}
       >
         <DataGrid
-         apiRef={apiRef}
           rows={mockDataContractors}
           columns={columns}
           components={{ Toolbar: GridToolbar }}  
+          
           
         />
       </Box>
