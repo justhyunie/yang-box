@@ -1,9 +1,9 @@
 import { useState } from "react";
-//import FullCalendar from "@fullcalendar/react";  //problems 
+import FullCalendar from "@fullcalendar/react";  //problems 
 import { formatDate } from "@fullcalendar/core";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
-//import interactionPlugin from "@fullcalendar/interaction"; //problems
+import interactionPlugin from "@fullcalendar/interaction"; //problems
 import listPlugin from "@fullcalendar/list";
 import {
   Box,
@@ -94,7 +94,7 @@ const Calendar = () => {
         {/* CALENDAR */}
         <Box flex="1 1 100%" ml="15px">
 
-         {/* <FullCalendar
+          <FullCalendar
             height="75vh"
             plugins={[
               dayGridPlugin,
@@ -127,7 +127,7 @@ const Calendar = () => {
                 date: "2022-09-28",
               },
             ]}
-          />*/}
+          />
         </Box>
       </Box>
     </Box>
