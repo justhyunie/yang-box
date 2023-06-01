@@ -24,13 +24,9 @@ import { OutlinedInput, InputAdornment, FormControl } from "@mui/material";
 
 const initialValues = {
   ordernumber: "",
-  orderdate: "",
   shippingdate: "",
-  orderdeadline: "",
-  shippingdeadline: "",
   shipmentarrivaldate: "",
   tracking: "",
-  classcode: "",
   status: "",
   shipmentcost: "",
 };
@@ -49,26 +45,25 @@ const Form = () => {
   };
 
   const [event, setEvent] = React.useState([]);
-  const [order, setOrder] = React.useState([]);
 
   const event_list_from_api = ["Event 1", "Event 2", "Event 3"];
-  const hardware_list_from_api = ["Hardware 1", "Hardware 2", "Hardware 3"];
 
   const handleEventChange = (data) => {
     setEvent(data);
     console.log(data);
   };
 
-  const handleOrderChange = (data) => {
-    setOrder(data);
+  const [status, setStatus] = React.useState([]);
+  const handleStatusChange = (data) => {
+    setStatus(data);
     console.log(data);
   };
 
   return (
     <Box m="20px">
       <Header
-        title="CREATE HARDWARE REQUEST"
-        subtitle="Create a New Hardware Request"
+        title="UPDATE HARDWARE REQUEST DASHBOARD"
+        subtitle="Update Hardware Request"
       />
 
       <Formik
@@ -93,51 +88,89 @@ const Form = () => {
                 "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
               }}
             >
-              <MultiSelectionBox
-                onChildChange={handleEventChange}
-                names={event_list_from_api}
-                label={"Event"}
-              />
+              <Box sx={{ gridColumn: "span 4" }}>
+                Reveal list of hardware from event / hardware request{" "}
+              </Box>
+              <h1>Item 1... </h1>
+              <h1>Item 2... </h1>
+              <h1>Item 3... </h1>
+              <h1>Item 4... </h1>
 
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DatePicker
-                  label="Order Date"
+                  label="Shipping Date"
                   onBlur={handleBlur}
                   onChange={handleChange}
-                  name="orderdate"
-                  error={!!touched.orderdate && !!errors.orderdate}
-                  helperText={touched.orderdate && errors.orderdate}
+                  name="shippingdate"
+                  error={!!touched.shippingdate && !!errors.shippingdate}
+                  helperText={touched.shippingdate && errors.shippingdate}
                 />
               </LocalizationProvider>
 
+              <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <DatePicker
+                  label="Order Deadline"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  name="orderdeadline"
+                  error={!!touched.orderdeadline && !!errors.orderdeadline}
+                  helperText={touched.orderdeadline && errors.orderdeadline}
+                />
+              </LocalizationProvider>
 
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DatePicker
-                  label="Shipping Deadline"
+                  label="Shipment Arrival Date"
                   onBlur={handleBlur}
                   onChange={handleChange}
-                  name="shippingdeadline"
+                  name="shipmentarrivaldate"
                   error={
-                    !!touched.shippingdeadline && !!errors.shippingdeadline
+                    !!touched.shipmentarrivaldate &&
+                    !!errors.shipmentarrivaldate
                   }
                   helperText={
-                    touched.shippingdeadline && errors.shippingdeadline
+                    touched.shipmentarrivaldate && errors.shipmentarrivaldate
                   }
                 />
               </LocalizationProvider>
 
-              <br /><br />
+              <FormControl fullWidth sx={{ m: 1 }}>
+                <InputLabel htmlFor="outlined-adornment-amount">
+                  Shipment Cost
+                </InputLabel>
+                <OutlinedInput
+                  id="outlined-adornment-amount"
+                  startAdornment={
+                    <InputAdornment position="start">$</InputAdornment>
+                  }
+                  label="Shipment Cost"
+                />
+              </FormControl>
+
+              <TextField
+                fullWidth
+                variant="filled"
+                type="text"
+                label="Tracking"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                value={values.tracking}
+                name="tracking"
+                error={!!touched.tracking && !!errors.tracking}
+                helperText={touched.tracking && errors.tracking}
+                sx={{ gridColumn: "span 2" }}
+              />
 
               <MultiSelectionBox
-                onChildChange={handleOrderChange}
-                names={hardware_list_from_api}
-                label={"Hardware"}
+                onChildChange={handleStatusChange}
+                names={["Pending", "Ordered", "Packing", "Shipped", "Arrived"]}
+                label={"Status"}
               />
             </Box>
 
             <Box display="flex" justifyContent="end" mt="20px">
               <Button type="submit" color="secondary" variant="contained">
-                CREATE NEW HARDWARE REQUEST
+                UPDATE HARDWARE REQUEST
               </Button>
             </Box>
           </form>

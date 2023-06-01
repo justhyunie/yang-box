@@ -16,15 +16,16 @@ import EventForm from "./scenes/forms/event form/index.jsx";
 import ContractorForm from "./scenes/forms/contractor form/index.jsx";
 import ClientInvoiceForm from "./scenes/forms/client_invoice/index.jsx";
 import EomForm from "./scenes/forms/eom form";
-import HardwareForm from "./scenes/forms/hardware form/index.jsx"
-import HardwareRequestForm from "./scenes/forms/hardware_request form/index.jsx"
+import HardwareForm from "./scenes/forms/hardware form/index.jsx";
+import HardwareRequestForm from "./scenes/forms/hardware_request form/index.jsx";
+import HardwareRequestUpdate from "./scenes/forms/hardware_request_update form/index.jsx";
 
 import Calendar from "./scenes/calendar";
 import FAQ from "./scenes/faq";
 import Bar from "./scenes/bar";
 import Pie from "./scenes/pie";
 import Events from './scenes/events/index.jsx';
-import Todo from './scenes/todo/personal_todo/index.jsx'
+import Todo from './scenes/todo/personal_todo/index.jsx';
 
 import EventProfile from './scenes/profiles/event_profile/index.jsx';
 import ToDoProfile from './scenes/profiles/todo_profile/index.jsx';
@@ -32,6 +33,7 @@ import Hardware from './scenes/hardware/index.jsx';
 import HardwareRequest from './scenes/hardware_request/index.jsx';
 import PersonalToDo from './scenes/todo/personal_todo/index.jsx';
 import EventToDo from './scenes/todo/event_todo/index.jsx';
+
 
 
 /** 
@@ -66,6 +68,9 @@ function App() {
             <Route path="/client_invoices" element={<ClientInvoice/>}/>
             <Route path="/hardware" element={<Hardware/>}/>
             <Route path="/hardware_request" element={<HardwareRequest/>}/>
+            <Route path="/hardware_request_update" element={<HardwareRequestUpdate/>}/>
+
+
 
             <Route path="/form" element={<Form/>}/>
             <Route path="/calendar" element={<Calendar/>}/>
@@ -83,6 +88,8 @@ function App() {
             <Route path="/hardwareform" element={<HardwareForm/>}/>
             <Route path="/client_invoiceform" element={<ClientInvoiceForm/>}/>
             <Route path="/hardware_requestform" element={<HardwareRequestForm/>}/>
+            <Route path="/hardware_request_updateform" element={<HardwareRequestUpdate/>}/>
+
 
             <Route path="/event_profile/:id" element={<EventProfile/>}/>
             <Route path="/todo_profile/:id" element={<ToDoProfile/>}/>

@@ -16,6 +16,9 @@ const Team = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
+
+  //get react useState to call api.  
+
   const columns = [
     { field: "id", headerName: "ID" },
     { field: "firstname",headerName: "First Name",flex: 1,cellClassName: "name-column--cell",},
@@ -71,6 +74,10 @@ const Team = () => {
 
       >
         <DataGrid rows={mockDataEOM} columns={columns} />
+
+
+
+
       </Box>
     </Box>
   );
