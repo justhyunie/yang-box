@@ -4,7 +4,6 @@ import "react-pro-sidebar/dist/css/styles.css"; //https://www.npmjs.com/package/
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
 import { tokens } from "../../theme.js";
-
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlineOutlinedIcon from "@mui/icons-material/PeopleOutlineOutlined";
 import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
@@ -17,7 +16,6 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
-
 
 //sub/child component for each item to reduce redundancy
 
@@ -76,7 +74,6 @@ const Sidebar = () => {
               color: colors.grey[100],
             }}
           >
-
             {/**TITLE BAR NAME */}
             {!isCollapsed && (
               <Box
@@ -95,8 +92,7 @@ const Sidebar = () => {
             )}
           </MenuItem>
 
-
-           {/**PROFILE NAME AND IMAGE DISPLAYED */}
+          {/**PROFILE NAME AND IMAGE DISPLAYED */}
 
           {!isCollapsed && (
             <Box mb="25px">
@@ -125,7 +121,7 @@ const Sidebar = () => {
             </Box>
           )}
 
-           {/**MENU ICONS AND LINKS */}
+          {/**MENU ICONS AND LINKS */}
 
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             <Item
@@ -143,7 +139,7 @@ const Sidebar = () => {
             >
               Data
             </Typography>
-            
+
             <Item
               title="Manage Team"
               to="/team"
@@ -151,7 +147,7 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            
+
             <Item
               title="Contractors"
               to="/contractors"
@@ -161,15 +157,32 @@ const Sidebar = () => {
             />
 
             <Item
-              title="Contacts Information"
-              to="/contact"
+              title="Events"
+              to="/events"
               icon={<ContactsOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
+
             <Item
-              title="Invoices Balances"
-              to="/invoices"
+              title="Client Invoices"
+              to="/client_invoices"
+              icon={<ReceiptLongOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+
+            <Item
+              title="Hardware"
+              to="/hardware"
+              icon={<ReceiptLongOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+
+            <Item
+              title="Hardware Request"
+              to="/hardware_request"
               icon={<ReceiptLongOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -180,26 +193,20 @@ const Sidebar = () => {
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px" }}
             >
-              Pages
+              To Do Lists
             </Typography>
+
             <Item
-              title="Profile Form"
-              to="/form"
-              icon={<PersonOutlineOutlinedIcon />}
+              title="Personal To Do List"
+              to="/personal_todo"
+              icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Calendar"
-              to="/calendar"
-              icon={<CalendarTodayOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="FAQ Page"
-              to="/faq"
-              icon={<HelpOutlineOutlinedIcon />}
+              title="Event To Do Lists"
+              to="/event_todo"
+              icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
@@ -209,7 +216,10 @@ const Sidebar = () => {
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px" }}
             >
-              Charts
+
+
+              
+              Test Placeholders
             </Typography>
             <Item
               title="Bar Chart"
@@ -236,6 +246,45 @@ const Sidebar = () => {
               title="Geography Chart"
               to="/geography"
               icon={<MapOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+
+            <Item
+              title="Work Flow Page"
+              to="/faq"
+              icon={<HelpOutlineOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+
+            <Item
+              title="Profile Form"
+              to="/form"
+              icon={<PersonOutlineOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Calendar"
+              to="/calendar"
+              icon={<CalendarTodayOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+
+            <Item
+              title="Invoices Balances"
+              to="/invoices"
+              icon={<ReceiptLongOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+
+            <Item
+              title="Contacts Information"
+              to="/contact"
+              icon={<ContactsOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />

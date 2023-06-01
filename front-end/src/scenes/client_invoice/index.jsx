@@ -4,10 +4,15 @@ import { tokens } from "../../theme.js";
 import { mockDataInvoices } from "../../data/mockData";
 
 import Header from "../../components/Header";
+import { useNavigate } from "react-router-dom";
+import Fab from "@mui/material/Fab";
+import AddIcon from "@mui/icons-material/Add";
 
 const Invoices = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
+  //REACT HOOK CALLING API
 
   const columns = [
     { field: "id", headerName: "ID" },
@@ -34,25 +39,14 @@ const Invoices = () => {
     { field: "date", headerName: "Date", flex: 1 },
   ];
 
-  /**Notes:
-   *
-   * Must define margin of parent boxes for data to show up <Box m="20px></Box>
-   *
-   * 70vh = viewport height (explicit fixed css)
-   *
-   * if you are disatisfied of the default data gride, you may make changes via editing
-   * the parent box and using the sx attribute to make adjustments (reference div name by inpspection tool via console):
-   * example:  "sx={{"& .MuiDataGrid-root":{border:"none"}}}""  which gets ride of the border
-   *
-   * Go thruogh Datagrid documentation for a list of attributes you can edit to customize tables
-   * https://mui.com/x/api/data-grid/data-grid/
-   *
-   * look up ways to customize toolbar
-   *
-   */
+  const navigate = useNavigate();
   return (
     <Box m="20px">
-      <Header title="INVOICES" subtitle={"List of Invoice Balances"} />
+      <Header title="CLIENT INVOICES" subtitle={"List of Client Invoices"} />
+      <Fab color="primary" aria-label="add">
+        <AddIcon onClick={()=>{console.log("test");  navigate("/client_invoiceform");}}/>
+      </Fab>
+
       <Box
         m="40px 0 0 0"
         height="75vh"

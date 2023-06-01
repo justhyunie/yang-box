@@ -1,0 +1,67 @@
+import { tokens } from "../theme";
+import Modal from "../components/Modal";
+
+import { Button } from "@mui/material";
+
+export const mockDataHardware = [
+  {
+    id: 0,
+    name: "Samsung Galaxy S10",
+    marketprice: 500.00,
+    rentalcostmonthly: 500.00,
+    rentalcostweekly: 500.00,
+    purchasecost: 500.00,
+    companypurchasedate: "2022-09-09",
+    classcode: "Mobile Device",
+    available: false,
+    notes: "Notes Here",
+  },
+  {
+    id: 1,
+    name: "Samsung Galaxy S10",
+    marketprice: 500.00,
+    rentalcostmonthly: 500.00,
+    rentalcostweekly: 500.00,
+    purchasecost: 500.00,
+    companypurchasedate: "2022-09-09",
+    classcode: "Mobile Device",
+    available: false,
+    notes: "Notes Here",
+  },
+  {
+    id: 2,
+    name: "Samsung Galaxy S10",
+    marketprice: 500.00,
+    rentalcostmonthly: 500.00,
+    rentalcostweekly: 500.00,
+    purchasecost: 500.00,
+    companypurchasedate: "2022-09-09",
+    classcode: "Mobile Device",
+    available: false,
+    notes: "Notes Here",
+  },
+  {
+    id: 4,
+    name: "Samsung Galaxy S10",
+    marketprice: 500.00,
+    rentalcostmonthly: 500.00,
+    rentalcostweekly: 500.00,
+    purchasecost: 500.00,
+    companypurchasedate: "2022-09-09",
+    classcode: "Mobile Device",
+    available: false,
+    notes: "Notes Here",
+  },
+  {
+    id: 4,
+    name: "iPad Mini 4",
+    marketprice: 500.00,
+    rentalcostmonthly: 500.00,
+    rentalcostweekly: 500.00,
+    purchasecost: 500.00,
+    companypurchasedate: "2022-09-09",
+    classcode: "Mobile Device",
+    available: false,
+    notes: "Notes Here",
+  },
+];
