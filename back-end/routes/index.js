@@ -6,6 +6,7 @@ var config = require('../config/config')  //database config uploaded via FTP
 var connection = mysql.createConnection(config.db)
 
 connection.connect();
+console.log('connected');
 
 function validateKey(key){
 	console.log(key)
@@ -28,6 +29,8 @@ function validateKey(key){
 /***************************EOM****************************************************** */
 
 router.get('/get/all/eom', function(req, res, next) {
+
+	
 	// Removed isKeyValid so get is easier to test.
 	// var isKeyValid = validateKey(req.query.api_key);
 	// console.log(req.query.api_key)
@@ -54,6 +57,8 @@ router.get('/get/eom/:id', (req,res)=>{
 });
 
 router.post('/add/eom', (req,res)=>{
+	console.log(req.body);
+	
 	const targetId = req.body.data.id;  //see front end
 	const col_1 = req.body.data.firstname;
 	const col_2 = req.body.data.lastname;
